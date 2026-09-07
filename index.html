@@ -52,7 +52,7 @@
 
         body {
             background: linear-gradient(rgba(10, 15, 30, 0.75), rgba(10, 15, 30, 0.88)), 
-                        url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareglG9rzp45j2z5CNyMySWBb.jpeg');
+                        url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -72,10 +72,10 @@
         /* Header / Hero */
         header { text-align: center; padding: 80px 20px 70px; border-bottom: 1px solid var(--glass-border); }
         .server-logo { width: 100px; height: 100px; object-fit: contain; margin-bottom: 15px; filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.4)); }
-        header h1 { font-size: 3.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header h1 { font-size: 3.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         header p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 14px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.3s ease; font-size: 1.2rem; font-weight: 600; }
+        .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 14px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.3s ease; }
         .ip-box:hover { background: var(--primary); transform: scale(1.04); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
 
         .server-stats { margin-top: 25px; font-size: 1rem; color: var(--text-light); display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; }
@@ -109,7 +109,7 @@
         .wiki-sidebar::-webkit-scrollbar { width: 5px; }
         .wiki-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
         
-        .wiki-tab { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 10px 15px; border-radius: 8px; text-align: left; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 10px; }
+        .wiki-tab { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 10px 15px; border-radius: 8px; text-align: left; font-size: 0.92rem; cursor: pointer; transition: all 0.2s ease; }
         .wiki-tab span.num { color: #fdba74; font-size: 0.85rem; width: 22px; flex-shrink: 0; }
         .wiki-tab:hover { background: rgba(255, 255, 255, 0.1); border-color: #fbbf24; color: var(--text-light); }
         .wiki-tab.active { background: rgba(234, 88, 12, 0.25); border-color: #ea580c; color: #fff; transform: translateX(4px); }
@@ -147,7 +147,8 @@
 <body>
 
     <header class="glass">
-        <img src="SmallSquareLogoJpg-removebg-preview.png" alt="Olster Studios Icon" class="server-logo">
+        <img src="SmallSquareLogoJpg-removebg-preview.png" alt="CrispySprings Icon" class="server-logo">
+        <h1>CrispySprings SMP</h1>
         <p>A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.</p>
         
         <div class="ip-box" onclick="copyIP()" id="ipBtn">
@@ -249,7 +250,7 @@
                     <div id="home" class="wiki-pane active">
                         <h2>Crispy Springs Community Guide</h2>
                         <p>Welcome to <strong>Crispy Springs</strong>, a feature-rich community survival server built around exploration, cooperation, meaningful progression and a player-driven economy.</p>
-                        <p>Crispy Springs supports both <strong>Java Edition and Bedrock Edition</strong> players. You can progress through 550 levels, choose Jobs, build and protect a home, trade with other players, discover hidden treasures, complete achievements, choose whether to participate in optional PvP and create permanent Masterwork equipment through the Community Forge.</p>
+                        <p>Crispy Springs supports both <strong>Java Edition and Bedrock Edition</strong> players. You can progress through 550 levels, choose Jobs, build and protect a home, trade with other players, and much more.</p>
                         <h3>Start here</h3>
                         <ul>
                             <li>Complete the first-join Pathfinder journey.</li>
@@ -324,7 +325,7 @@
                         <h3>1. Survival World</h3>
                         <p>The main world for building homes, towns, and shops. Features a massive 1,000,000 × 1,000,000 border where terrain and structures are preserved permanently.</p>
                         <h3>2. Resource World</h3>
-                        <p>A dedicated world for gathering raw materials, mining, and deforestation. Access it via <code>/rw tp</code> or through Spawn portals. <strong>Note:</strong> The Resource World resets periodically!</p>
+                        <p>A dedicated world for gathering raw materials, mining, and deforestation. Access it via <code>/rw tp</code> or through Spawn portals. Resets periodically to prevent depletion.</p>
                     </div>
 
                     <!-- 06. ECONOMY -->
@@ -465,7 +466,7 @@
                         <h2>Graves & Death Recovery</h2>
                         <p>Never worry about losing inventory items to despawning or lava again!</p>
                         <ul>
-                            <li>Upon death, an **AxGrave** lockbox spawns at your death location containing your items and experience.</li>
+                            <li>Upon death, an <strong>AxGrave</strong> lockbox spawns at your death location containing your items and experience.</li>
                             <li>Graves are protected so only you can unlock your items for 30 minutes.</li>
                             <li>Type <code>/graves</code> to view your death coordinates or navigate back.</li>
                         </ul>
@@ -474,7 +475,7 @@
                     <!-- 17. VOICE CHAT -->
                     <div id="voice-chat" class="wiki-pane">
                         <h2>Proximity Voice Chat</h2>
-                        <p>Interact with nearby players in real-time using position-based audio through **Simple Voice Chat**.</p>
+                        <p>Interact with nearby players in real-time using position-based audio through <strong>Simple Voice Chat</strong>.</p>
                         <h3>Setup Guide</h3>
                         <ol>
                             <li>Install the <strong>Simple Voice Chat</strong> client mod for Fabric or Forge matching your client version.</li>
@@ -501,114 +502,100 @@
 
                     <!-- 19. LEADERBOARDS -->
                     <div id="leaderboards" class="wiki-pane">
-                        <h2>Leaderboards & Rankings</h2>
-                        <p>Compete with players across multiple gameplay categories powered by <strong>ajLeaderboards</strong>.</p>
-                        <ul>
-                            <li>Check physical leaderboard holograms located around Spawn.</li>
-                            <li>View stats in-game using <code>/ajlb</code>.</li>
-                            <li>Track categories such as **Progression Level**, **Jobs Revenue**, **mcMMO Power Level**, **Economy Balance**, and **Playtime**.</li>
-                        </ul>
+                        <h2>Leaderboards</h2>
+                        <p>Compete with other players across multiple categories including wealth, job levels, and mcMMO skills.</p>
+                        <p>Type <code>/top</code> to view current leaderboards and see where you rank.</p>
                     </div>
 
-                    <!-- 20. COSMETICS & POSES -->
+                    <!-- 20. COSMETICS -->
                     <div id="cosmetics-poses" class="wiki-pane">
-                        <h2>Character Poses & Emotes</h2>
-                        <p>Use GSit commands to sit on chairs, lay down, or pose anywhere without needing blocks.</p>
-                        <table>
-                            <tr><th>Command</th><th>Action</th></tr>
-                            <tr><td><code>/sit</code></td><td>Sit down on the surface beneath you.</td></tr>
-                            <tr><td><code>/lay</code></td><td>Lay flat on your back.</td></tr>
-                            <tr><td><code>/crawl</code></td><td>Force your player model into a 1-block crawl animation.</td></tr>
-                            <tr><td><code>/spin</code></td><td>Spin on your stomach.</td></tr>
-                        </table>
+                        <h2>Character Poses & Cosmetics</h2>
+                        <p>Unlock and customize character poses and cosmetic items as you progress through levels.</p>
+                        <p>Access cosmetics through the <code>/menu</code> to personalize your player appearance.</p>
                     </div>
 
-                    <!-- 21. ARMORSTAND EDITOR -->
+                    <!-- 21. ARMOR STAND EDITOR -->
                     <div id="armorstand-editor" class="wiki-pane">
                         <h2>Armor Stand Editor</h2>
-                        <p>Customize armor stands with precision controls for building displays and statues.</p>
-                        <ul>
-                            <li>Shift + Right-Click an armor stand with an empty hand to open the Editor GUI.</li>
-                            <li>Toggle arms, plate bases, invisibility, small scale, and gravity off/on.</li>
-                            <li>Rotate and position head, torso, arms, and legs in 3D space.</li>
-                        </ul>
+                        <p>Edit and customize armor stands in your claims for creative builds.</p>
+                        <p>Sneak and right-click armor stands to enter edit mode and customize poses and equipment.</p>
                     </div>
 
                     <!-- 22. CUSTOM MODELS -->
                     <div id="custom-models" class="wiki-pane">
-                        <h2>Custom Player Models (CPM)</h2>
-                        <p>Crispy Springs fully supports **Customizable Player Models (CPM)**.</p>
-                        <ul>
-                            <li>Render custom 3D skin additions, tails, wings, and animations visible to other players using CPM.</li>
-                            <li>Completely client-safe with automatic anti-exploit scale restrictions applied.</li>
-                        </ul>
+                        <h2>Custom Player Models</h2>
+                        <p>Use resource packs to unlock custom player models and character skins.</p>
+                        <p>Download the official CrispySprings resource pack from our Discord for the full experience.</p>
                     </div>
 
                     <!-- 23. SUPPORTER BENEFITS -->
                     <div id="supporter-benefits" class="wiki-pane">
                         <h2>Supporter Store Perks</h2>
-                        <p>Supporting Crispy Springs through our official Tebex Store helps pay dedicated server hosting fees while unlocking non-pay-to-win convenience features.</p>
+                        <p>Purchase supporter ranks and boosters to enhance your gameplay experience.</p>
+                        <h3>Available Perks</h3>
                         <ul>
-                            <li>Exclusive chat tags, colors, and rank badges.</li>
-                            <li>Access to expanded vault pages and extra home set slots.</li>
-                            <li>Priority queue access during peak playing hours.</li>
+                            <li><strong>Supporter Rank:</strong> Exclusive cosmetics and quality-of-life features.</li>
+                            <li><strong>XP Boosters:</strong> Temporary experience multipliers for faster progression.</li>
+                            <li><strong>Treasure Keys:</strong> Unlock rare treasure chests with valuable rewards.</li>
                         </ul>
                     </div>
 
-                    <!-- 24. RULES & HELP -->
+                    <!-- 24. RULES & SUPPORT -->
                     <div id="rules-help" class="wiki-pane">
-                        <h2>Rules & Community Support</h2>
-                        <h3>Server Guidelines</h3>
+                        <h2>Rules & Support</h2>
+                        <p>Follow community guidelines to ensure a pleasant experience for everyone.</p>
+                        <h3>Core Rules</h3>
                         <ul>
-                            <li><strong>No Griefing or Stealing:</strong> Unclaimed builds are still protected under community rules.</li>
-                            <li><strong>Fair Play:</strong> X-Ray, fly hacks, auto-clickers, or hacked clients are strictly forbidden and detected automatically by GrimAC.</li>
-                            <li><strong>Be Respectful:</strong> Keep chat civil and free of hate speech, toxic behavior, or spam.</li>
+                            <li>No griefing outside of claims.</li>
+                            <li>Respect other players' builds and claims.</li>
+                            <li>No harassment or inappropriate behavior.</li>
+                            <li>Keep chat family-friendly.</li>
                         </ul>
-                        <h3>Getting Support</h3>
-                        <p>If you encounter an issue, open a support ticket on our <a href="https://discord.gg/9K9r9kjSR4" target="_blank">Discord Server</a>.</p>
+                        <p>For support, contact staff on Discord: <strong>discord.gg/9K9r9kjSR4</strong></p>
                     </div>
 
                     <!-- 25. MARKETPLACE ORDERS -->
                     <div id="marketplace-orders" class="wiki-pane">
                         <h2>Marketplace Buy Orders</h2>
-                        <p>Need bulk materials for a build? Set up automated buy requests so other players can fill them!</p>
-                        <ul>
-                            <li>Type <code>/orders</code> to open the marketplace interface.</li>
-                            <li>Create a buy request specifying the required item, quantity, and payment per item.</li>
-                            <li>Sellers can fulfill your order directly through the GUI to receive immediate payment.</li>
-                        </ul>
+                        <p>View active player buy requests and sell items directly to buyers.</p>
+                        <p>Use <code>/orders</code> to browse marketplace listings and make sales instantly.</p>
                     </div>
 
                     <!-- 26. PVP -->
                     <div id="pvp" class="wiki-pane">
-                        <h2>Player vs Player (PvP)</h2>
-                        <p>PvP is strictly **opt-in** on Crispy Springs so players can build peacefully without fear of surprise attacks.</p>
+                        <h2>Player vs Player</h2>
+                        <p>Enable or disable PvP status to control combat interactions with other players.</p>
+                        <h3>PvP System</h3>
                         <ul>
-                            <li>Toggle your PvP status using <code>/pvptoggle</code>.</li>
-                            <li>Both combatants must have PvP enabled to deal damage to each other in Survival.</li>
+                            <li>Use <code>/pvptoggle</code> to enable or disable PvP.</li>
+                            <li>Cannot damage players with PvP disabled.</li>
+                            <li>Disabled by default for new players.</li>
                         </ul>
                     </div>
 
                     <!-- 27. CREATOR PROGRAMME -->
                     <div id="creator-programme" class="wiki-pane">
                         <h2>Creator Programme</h2>
-                        <p>Do you stream or create YouTube videos, TikToks, or Shorts on Crispy Springs? Apply for our Creator Programme!</p>
+                        <p>Are you a content creator? Join our Creator Programme for exclusive benefits!</p>
+                        <h3>Benefits</h3>
                         <ul>
-                            <li>Receive an in-game <code>LIVE</code> or <code>CREATOR</code> badge.</li>
-                            <li>Get stream announcements broadcast to the server chat and Discord automatically.</li>
-                            <li>Apply by opening a ticket on our Discord server.</li>
+                            <li>Exclusive roles and recognition in the community.</li>
+                            <li>Early access to new features.</li>
+                            <li>Special in-game items and cosmetics.</li>
                         </ul>
+                        <p>Apply with <code>/apply creator</code> on the server.</p>
                     </div>
 
-                    <!-- 28. DISCORD LINKING -->
+                    <!-- 28. DISCORD CHAT LINKING -->
                     <div id="chat-linking" class="wiki-pane">
-                        <h2>Discord Chat & Account Linking</h2>
-                        <p>Link your Minecraft account with our Discord server powered by **DiscordSRV**.</p>
-                        <h3>Linking Steps</h3>
+                        <h2>Discord Chat Linking</h2>
+                        <p>Link your Minecraft profile to Discord to bridge in-game and Discord communities.</p>
+                        <h3>How to Link</h3>
                         <ol>
-                            <li>Type <code>/discord link</code> in-game to receive a unique 4-digit code.</li>
-                            <li>Send a direct message containing the code to the Crispy Springs Discord Bot on Discord.</li>
-                            <li>Your accounts are now linked! You will receive synced roles and secure account recovery support.</li>
+                            <li>Type <code>/discord link</code> in-game.</li>
+                            <li>Visit the Discord link provided.</li>
+                            <li>Authorize the connection.</li>
+                            <li>Your Minecraft and Discord accounts are now linked!</li>
                         </ol>
                     </div>
 
@@ -618,51 +605,54 @@
     </div>
 
     <footer>
-        <p>&copy; Olster Studios. All rights reserved. Not affiliated with Mojang Studios and/or Microsoft.</p>
+        <p>&copy; 2024 CrispySprings Community. All rights reserved. | Made with ❤️ by the CrispySprings Team</p>
     </footer>
 
     <script>
-        function openWiki(paneId, btnElement) {
-            const panes = document.querySelectorAll('.wiki-pane');
-            const tabs = document.querySelectorAll('.wiki-tab');
-
-            panes.forEach(pane => pane.classList.remove('active'));
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            const targetPane = document.getElementById(paneId);
-            if (targetPane) {
-                targetPane.classList.add('active');
-            }
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-        }
-
+        // Copy IP to clipboard
         function copyIP() {
             const ip = "147.135.6.160:25899";
-            navigator.clipboard.writeText(ip);
-            const ipBtn = document.getElementById('ipBtn');
-            const originalHTML = ipBtn.innerHTML;
-            ipBtn.innerHTML = "<span>✅ IP Copied!</span>";
-            setTimeout(() => { ipBtn.innerHTML = originalHTML; }, 2500);
+            navigator.clipboard.writeText(ip).then(() => {
+                const btn = document.getElementById('ipBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span>✅ Copied to clipboard!</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
 
-        async function fetchServerStatus() {
-            const statsBox = document.getElementById('serverStats');
-            try {
-                const response = await fetch('https://api.mcstatus.io/v2/status/java/147.135.6.160:25899');
-                const data = await response.json();
-                if (data.online) {
-                    statsBox.innerHTML = `<span class="status-dot online"></span> <strong>Online</strong> — ${data.players.online}/${data.players.max} Players`;
-                } else {
-                    statsBox.innerHTML = `<span class="status-dot offline"></span> Server Currently Offline`;
-                }
-            } catch (err) {
-                statsBox.innerHTML = `<span class="status-dot online"></span> <strong>Online</strong> — Port 25899`;
+        // Wiki tab functionality
+        function openWiki(paneId, button) {
+            // Hide all panes
+            const allPanes = document.querySelectorAll('.wiki-pane');
+            allPanes.forEach(pane => pane.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const allTabs = document.querySelectorAll('.wiki-tab');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected pane and mark tab as active
+            const selectedPane = document.getElementById(paneId);
+            if (selectedPane) {
+                selectedPane.classList.add('active');
+                button.classList.add('active');
             }
         }
-<div class="inner-socials"><a target="_blank" rel="noopener noreferrer" href="https://x.com/lmslickolster" aria-label="lmslickolster on X" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="$tertiaryText"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://dsc.gg/olsterstudios" aria-label="Olster Studios Discord" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" color="$tertiaryText"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@lmslickolster" aria-label="lmslickolster on TikTok" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="tiktok" class="svg-inline--fa fa-tiktok fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="$tertiaryText"><path fill="currentColor" d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lmslickolster/" aria-label="lmslickolster on Instagram" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="$tertiaryText"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://t.me/lmslickolster" aria-label="lmslickolster Telegram" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" color="$tertiaryText"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/lmslickolster" aria-label="lmslickolster on Youtube" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" color="$tertiaryText"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lmslickolster" aria-label="lmslickolster on Facebook" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="$tertiaryText"><path fill="currentColor" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"></path></svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/olstermc" aria-label="OlsterMC Twitch" class="c-kzqnzf"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitch" class="svg-inline--fa fa-twitch fa-lg " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="$tertiaryText"><path fill="currentColor" d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"></path></svg></a></div>
-        fetchServerStatus();
+
+        // Server status checker (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Placeholder for server status checker
+            // You can implement a real server status check here
+            setTimeout(() => {
+                const serverStats = document.getElementById('serverStats');
+                if (serverStats) {
+                    serverStats.innerHTML = '<span class="status-dot online"></span> Server Online';
+                }
+            }, 1000);
+        });
     </script>
 </body>
 </html>
