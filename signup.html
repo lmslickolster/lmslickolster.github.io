@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - My Journal</title>
+    <title>Create Account - Olster Studios</title>
     <style>
-        /* Base Reset & Variables (Matching your blog template) */
+        /* Base Reset & Variables */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -55,11 +55,21 @@
             margin-bottom: 30px;
         }
 
+        /* Icon Styling */
+        .brand-icon {
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px auto;
+            object-fit: contain;
+        }
+
         .auth-header .logo {
             font-size: 1.5rem;
             font-weight: bold;
             display: block;
             margin-bottom: 10px;
+            color: var(--text-main);
         }
 
         .auth-header h1 {
@@ -105,7 +115,7 @@
             line-height: 1.4;
         }
 
-        /* Call to Action Button */
+        /* Submit Button */
         .btn-submit {
             width: 100%;
             padding: 12px;
@@ -123,7 +133,7 @@
             background-color: #0052a3;
         }
 
-        /* Toggle between Login and Signup */
+        /* Footer Links */
         .auth-footer {
             text-align: center;
             margin-top: 25px;
@@ -138,11 +148,15 @@
 
     <div class="auth-container">
         <div class="auth-header">
-            <a href="index.html" class="logo">My Journal</a>
+            <!-- Brand Icon added here -->
+            <a href="https://github.io">
+                <img src="images/icon.png" alt="Logo Icon" class="brand-icon">
+            </a>
+            <a href="https://github.io" class="logo">My Journal</a>
             <h1>Create Your Account</h1>
         </div>
 
-        <form action="#" method="GET">
+        <form id="signupForm">
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required placeholder="Alex Smith">
@@ -169,6 +183,14 @@
             Already have an account? <a href="login.html">Log in</a>
         </div>
     </div>
+
+    <!-- JavaScript Redirect Logic -->
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'https://github.io'; 
+        });
+    </script>
 
 </body>
 </html>
