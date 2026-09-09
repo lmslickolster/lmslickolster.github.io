@@ -288,6 +288,89 @@
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
         }
 
+        /* Project Buttons */
+        .project-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary), #ff8c54);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.25);
+        }
+
+        .project-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.45);
+        }
+
+        /* Creative Content Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 500px;
+            padding: 35px;
+            background: rgba(10, 14, 39, 0.97);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: white;
+        }
+
+        .modal-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -434,31 +517,51 @@
                 <div class="project-card">
                     <h3>🎮 Streaming</h3>
                     <p>Join our live streams on Twitch and TikTok for engaging gameplay, community events, and creative content.</p>
+                    <a href="https://lmslickolster.github.io/streaming" target="_blank" rel="noopener" class="project-button">View Streaming</a>
                 </div>
                 <div class="project-card">
                     <h3>🌐 Community</h3>
                     <p>Join our Discord server to connect with fellow gamers, participate in events, and stay updated on all our latest news.</p>
+                    <a href="https://dsc.gg/olsterstudios" target="_blank" rel="noopener" class="project-button">Join Discord</a>
                 </div>
                 <div class="project-card">
                     <h3>🎨 Creative Content</h3>
                     <p>Follow our creative journey across YouTube, Instagram, and TikTok for behind-the-scenes content and more.</p>
+                    <button type="button" class="project-button" onclick="openSocialModal()">View Socials</button>
                 </div>
             </div>
         </section>
 
         <!-- Community Section -->
         <section class="section">
-            <h2 class="section-title">Join Our Community</h2>
+            <h2 class="section-title">Visit Our Blog</h2>
             <div class="about-box">
                 <p style="text-align: center; margin-bottom: 25px;">
                     Be part of something special! Join thousands of gamers and creators in our growing community.
                 </p>
                 <div style="text-align: center;">
-                    <a href="https://dsc.gg/olsterstudios" target="_blank" class="cta-button">Join Discord Server</a>
+                    <a href="https://lmslickolster.github.io/blog" target="_blank" rel="noopener" class="cta-button">Visit Our Blog</a>
                 </div>
             </div>
         </section>
 
+    </div>
+
+
+    <!-- Creative Content Socials Modal -->
+    <div id="socialModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="socialModalTitle" onclick="closeSocialModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button type="button" class="modal-close" aria-label="Close" onclick="closeSocialModal()">&times;</button>
+            <h2 id="socialModalTitle">Creative Content</h2>
+            <p>Follow Olster Studios across our social platforms.</p>
+            <div class="modal-social-links">
+                <a href="https://www.youtube.com/@lmslickolster" target="_blank" rel="noopener" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/lmslickolster" target="_blank" rel="noopener" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/lmslickolster" target="_blank" rel="noopener" class="social-link" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@lmslickolster" target="_blank" rel="noopener" class="social-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/lmslickolster/" target="_blank" rel="noopener" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -496,6 +599,24 @@
                 document.getElementById('lastUpdated').textContent = 'Date unavailable';
             }
         }
+
+
+        // Creative Content social modal
+        function openSocialModal() {
+            document.getElementById('socialModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSocialModal(event) {
+            if (!event || event.target === document.getElementById('socialModal')) {
+                document.getElementById('socialModal').classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeSocialModal();
+        });
 
         // Run when page loads
         fetchLastUpdateTime();
