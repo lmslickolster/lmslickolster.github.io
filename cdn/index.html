@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olster Studios CDN</title>
+  <meta name="description" content="Olster Studios CDN - files hosted through GitHub and delivered by jsDelivr.">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap">
+  <style>
+    :root{--primary:#ff6b35;--accent:#00d4ff;--text:#f0f0f0;--muted:#aaa;--bg:#0a0e27;--glass:rgba(10,14,39,.82);--border:rgba(255,107,53,.22)}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif}
+    body{min-height:100vh;color:var(--text);background:linear-gradient(135deg,#0a0e27,#1a1f3a 50%,#0f1729);padding:24px}
+    body:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 20% 50%,rgba(255,107,53,.1),transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,212,255,.1),transparent 50%)}
+    .wrap{position:relative;z-index:1;max-width:1000px;margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:55px}
+    .brand{color:var(--primary);text-decoration:none;font-weight:800;letter-spacing:1px}
+    nav a:not(.brand){color:var(--text);text-decoration:none;padding:8px 15px;border:1px solid var(--border);border-radius:50px}
+    nav a:not(.brand):hover{background:var(--primary);border-color:var(--primary)}
+    header{text-align:center;margin-bottom:45px}
+    .logo{width:90px;height:90px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(255,107,53,.5));margin-bottom:15px}
+    h1{font-size:clamp(2.2rem,6vw,3.7rem);background:linear-gradient(135deg,#ff6b35,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    header p{color:var(--muted);margin-top:8px}
+    .panel{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:25px;backdrop-filter:blur(10px)}
+    .panel h2{color:var(--accent);margin-bottom:8px}
+    .panel p{color:var(--muted);margin-bottom:18px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .button{display:inline-block;padding:11px 20px;border-radius:50px;text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--primary),#ff8c54);font-weight:600}
+    .button.secondary{background:transparent;border:1px solid var(--border)}
+    .files{display:grid;gap:12px}
+    .file{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 18px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.025)}
+    .file-name{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .file-meta{font-size:.8rem;color:var(--muted);margin-top:3px}
+    .copy{cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text);border-radius:9px;padding:8px 12px}
+    .copy:hover{background:var(--primary)}
+    #status{text-align:center;color:var(--muted);padding:20px}
+    code{color:var(--accent);word-break:break-all}
+    @media(max-width:650px){nav{flex-direction:column}.file{align-items:flex-start;flex-direction:column}.file .copy{width:100%}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="brand" href="/">OLSTER STUDIOS</a><a href="/">Home</a></nav>
+  <header>
+    <img src="/images/logo.png" alt="Olster Studios" class="logo">
+    <h1>Olster CDN</h1>
+    <p>Upload files to GitHub. They get delivered through jsDelivr.</p>
+  </header>
+  <section class="panel">
+    <h2>📦 Upload a file</h2>
+    <p>Use GitHub to upload files into <code>cdn/files/</code>. Once uploaded, they automatically appear below.</p>
+    <div class="buttons">
+      <a class="button" href="https://github.com/lmslickolster/lmslickolster.github.io/upload/main/cdn/files" target="_blank" rel="noopener">Upload from GitHub</a>
+      <a class="button secondary" href="https://github.com/lmslickolster/lmslickolster.github.io/tree/main/cdn/files" target="_blank" rel="noopener">Open CDN folder</a>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>🌐 CDN files</h2>
+    <p>These links use jsDelivr's global CDN.</p>
+    <div id="status">Loading files...</div>
+    <div id="files" class="files"></div>
+  </section>
+</div>
+<script>
+const repo='lmslickolster/lmslickolster.github.io';
+const folder='cdn/files';
+const api=`https://api.github.com/repos/${repo}/contents/${folder}?ref=main`;
+const cdnBase=`https://cdn.jsdelivr.net/gh/${repo}@main/${folder}/`;
+const status=document.getElementById('status');
+const files=document.getElementById('files');
+function esc(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+async function load(){
+  try{
+    const r=await fetch(api,{headers:{Accept:'application/vnd.github+json'}});
+    if(!r.ok) throw new Error('GitHub API error');
+    const items=await r.json();
+    const usable=items.filter(x=>x.type==='file'&&x.name!=='.gitkeep');
+    status.style.display=usable.length?'none':'block';
+    status.textContent=usable.length?'':'No files yet. Upload one from GitHub above.';
+    files.innerHTML=usable.map(x=>{
+      const url=cdnBase+x.name.split('/').map(encodeURIComponent).join('/');
+      return `<div class="file"><div><div class="file-name">${esc(x.name)}</div><div class="file-meta">${(x.size/1024).toFixed(1)} KB · <code>${esc(url)}</code></div></div><button class="copy" data-url="${esc(url)}">Copy CDN URL</button></div>`;
+    }).join('');
+    document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText(b.dataset.url);const old=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=old,1200)});
+  }catch(e){status.textContent='Could not load the CDN files right now.';console.error(e)}
+}
+load();
+</script>
+</body>
+</html>
