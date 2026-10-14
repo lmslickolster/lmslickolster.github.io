@@ -27,13 +27,13 @@
     .home{color:#fff;background:linear-gradient(135deg,var(--orange),#ff8c54);box-shadow:0 8px 24px rgba(255,107,53,.22)}
     .blog{color:var(--cyan);border:1px solid rgba(0,212,255,.4);background:rgba(0,212,255,.06)}
     .hint{font-size:.82rem;margin-top:28px;color:#7f899e}
-    /* THE WHEEL OF DOOM: animated rainbow cursor for desktop pointers */
-    #wheel-of-doom{display:none;position:fixed;left:0;top:0;width:30px;height:30px;border-radius:50%;pointer-events:none;z-index:2147483647;background:conic-gradient(#ff1744,#ff9100,#ffea00,#00e676,#00b0ff,#651fff,#f500ff,#ff1744);box-shadow:0 0 12px rgba(255,255,255,.45);transform:translate(-50%,-50%);will-change:left,top,transform}
-    #wheel-of-doom:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#0a0e27;border:2px solid #fff}
-    #wheel-of-doom:before{content:"";position:absolute;inset:-4px;border:2px dashed rgba(255,255,255,.9);border-radius:50%}
+    /* THE WHEEL OF DOOM — macOS-style spinning beach ball */
+    #wheel-of-doom{display:none;position:fixed;left:0;top:0;width:34px;height:34px;border-radius:50%;pointer-events:none;z-index:2147483647;transform:translate(-50%,-50%);will-change:left,top,transform;overflow:hidden;border:1px solid rgba(255,255,255,.72);background:radial-gradient(ellipse at 28% 18%,rgba(255,255,255,.98) 0%,rgba(255,255,255,.55) 8%,rgba(255,255,255,0) 29%),conic-gradient(from -18deg,#f7f7f7 0deg 28deg,#f4a4b6 28deg 58deg,#ef3340 58deg 88deg,#f68b2d 88deg 118deg,#f5d64e 118deg 148deg,#8acb6b 148deg 178deg,#28b9a5 178deg 208deg,#4aa4e8 208deg 238deg,#6554c0 238deg 268deg,#a56ad6 268deg 298deg,#e65caa 298deg 328deg,#f7f7f7 328deg 360deg);box-shadow:inset -4px -5px 8px rgba(0,0,0,.32),inset 3px 3px 5px rgba(255,255,255,.7),0 2px 8px rgba(0,0,0,.35)}
+    #wheel-of-doom:after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.42),transparent 38%,rgba(0,0,0,.12) 78%,rgba(255,255,255,.18));pointer-events:none}
+    #wheel-of-doom:before{content:"";position:absolute;left:7px;top:4px;width:13px;height:7px;border-radius:50%;background:rgba(255,255,255,.62);filter:blur(1px);transform:rotate(-28deg);z-index:1}
     @media (hover:hover) and (pointer:fine){
       html,html *{cursor:none!important}
-      #wheel-of-doom{display:block;animation:doom-spin .75s linear infinite}
+      #wheel-of-doom{display:block;animation:doom-spin .9s linear infinite}
       @keyframes doom-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
     }
     @media (hover:none),(pointer:coarse){#wheel-of-doom{display:none!important}}
