@@ -27,10 +27,21 @@
     .home{color:#fff;background:linear-gradient(135deg,var(--orange),#ff8c54);box-shadow:0 8px 24px rgba(255,107,53,.22)}
     .blog{color:var(--cyan);border:1px solid rgba(0,212,255,.4);background:rgba(0,212,255,.06)}
     .hint{font-size:.82rem;margin-top:28px;color:#7f899e}
+    /* THE WHEEL OF DOOM: a rainbow spinner that replaces the normal cursor */
+    @media (hover:hover) and (pointer:fine){
+      body,body *{cursor:none!important}
+      #wheel-of-doom{position:fixed;top:0;left:0;width:28px;height:28px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:conic-gradient(#ff1744,#ff9100,#ffea00,#00e676,#00b0ff,#651fff,#f500ff,#ff1744);box-shadow:0 0 10px rgba(255,255,255,.28);animation:doom-spin .8s linear infinite;display:none}
+      #wheel-of-doom:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#0a0e27;border:2px solid rgba(255,255,255,.85)}
+      #wheel-of-doom:before{content:"";position:absolute;inset:-4px;border:2px dashed rgba(255,255,255,.8);border-radius:50%}
+      @keyframes doom-spin{to{rotate:360deg}}
+    }
+    @media (hover:none),(pointer:coarse){#wheel-of-doom{display:none!important}}
+    @media(prefers-reduced-motion:reduce){#wheel-of-doom{animation:none}}
     @media(prefers-reduced-motion:no-preference){.code{animation:float 4s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}}
   </style>
 </head>
 <body>
+  <div id="wheel-of-doom" aria-hidden="true"></div>
   <main>
     <a href="/" aria-label="Olster Studios home" style="padding:0;display:inline-flex">
       <img class="logo" src="/images/logo.png" alt="Olster Studios logo">
@@ -44,5 +55,17 @@
     </div>
     <p class="hint">Error 404: page not found. Blame the pixels. 🤷</p>
   </main>
+  <script>
+    (() => {
+      const wheel = document.getElementById('wheel-of-doom');
+      if (!wheel || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      window.addEventListener('pointermove', (event) => {
+        wheel.style.left = event.clientX + 'px';
+        wheel.style.top = event.clientY + 'px';
+        wheel.style.display = 'block';
+      }, { passive: true });
+      document.addEventListener('pointerleave', () => { wheel.style.display = 'none'; });
+    })();
+  </script>
 </body>
 </html>
