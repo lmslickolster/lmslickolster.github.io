@@ -27,27 +27,15 @@
     .home{color:#fff;background:linear-gradient(135deg,var(--orange),#ff8c54);box-shadow:0 8px 24px rgba(255,107,53,.22)}
     .blog{color:var(--cyan);border:1px solid rgba(0,212,255,.4);background:rgba(0,212,255,.06)}
     .hint{font-size:.82rem;margin-top:28px;color:#7f899e}
-    /* THE WHEEL OF DOOM — macOS-style spinning beach ball */
-    #wheel-of-doom{display:none;position:fixed;left:0;top:0;width:34px;height:34px;border-radius:50%;pointer-events:none;z-index:2147483647;transform:translate(-50%,-50%);will-change:left,top,transform;overflow:hidden;border:1px solid rgba(255,255,255,.72);background:radial-gradient(ellipse at 28% 18%,rgba(255,255,255,.98) 0%,rgba(255,255,255,.55) 8%,rgba(255,255,255,0) 29%),conic-gradient(from -18deg,#f7f7f7 0deg 28deg,#f4a4b6 28deg 58deg,#ef3340 58deg 88deg,#f68b2d 88deg 118deg,#f5d64e 118deg 148deg,#8acb6b 148deg 178deg,#28b9a5 178deg 208deg,#4aa4e8 208deg 238deg,#6554c0 238deg 268deg,#a56ad6 268deg 298deg,#e65caa 298deg 328deg,#f7f7f7 328deg 360deg);box-shadow:inset -4px -5px 8px rgba(0,0,0,.32),inset 3px 3px 5px rgba(255,255,255,.7),0 2px 8px rgba(0,0,0,.35)}
-    #wheel-of-doom:after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.42),transparent 38%,rgba(0,0,0,.12) 78%,rgba(255,255,255,.18));pointer-events:none}
-    #wheel-of-doom:before{content:"";position:absolute;left:7px;top:4px;width:13px;height:7px;border-radius:50%;background:rgba(255,255,255,.62);filter:blur(1px);transform:rotate(-28deg);z-index:1}
-    @media (hover:hover) and (pointer:fine){
-      html,html *{cursor:none!important}
-      #wheel-of-doom{display:block;animation:doom-spin .9s linear infinite}
-      @keyframes doom-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-    }
-    @media (hover:none),(pointer:coarse){#wheel-of-doom{display:none!important}}
-    @media(prefers-reduced-motion:reduce){#wheel-of-doom{animation:none!important}}
     @media(prefers-reduced-motion:no-preference){.code{animation:float 4s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}}
   </style>
 </head>
 <body>
-  <div id="wheel-of-doom" aria-hidden="true"></div>
   <main>
     <a href="/" aria-label="Olster Studios home" style="padding:0;display:inline-flex">
       <img class="logo" src="/images/logo.png" alt="Olster Studios logo">
     </a>
-    <div class="code" aria-label="Error 404">404</div>
+    <div class="code" aria-label="404">404</div>
     <h1>Well, this is awkward.</h1>
     <p>We searched the whole website, checked behind the servers, and even asked the loading spinner. No luck. This page is officially playing hide-and-seek.</p>
     <div class="actions">
@@ -56,23 +44,6 @@
     </div>
     <p class="hint">Error 404: page not found. Blame the pixels. 🤷</p>
   </main>
-  <script>
-    (() => {
-      const wheel = document.getElementById('wheel-of-doom');
-      const desktopPointer = window.matchMedia('(hover:hover) and (pointer:fine)');
-      if (!wheel || !desktopPointer.matches) return;
 
-      const moveWheel = (event) => {
-        wheel.style.left = event.clientX + 'px';
-        wheel.style.top = event.clientY + 'px';
-      };
-
-      // Listen for both pointer and mouse events for wider browser compatibility.
-      window.addEventListener('pointermove', moveWheel, { passive: true });
-      window.addEventListener('mousemove', moveWheel, { passive: true });
-      window.addEventListener('blur', () => { wheel.style.visibility = 'hidden'; });
-      window.addEventListener('focus', () => { wheel.style.visibility = 'visible'; });
-    })();
-  </script>
 </body>
 </html>
