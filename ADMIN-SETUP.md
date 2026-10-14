@@ -7,12 +7,12 @@ The public website remains on GitHub Pages. The admin interface is `/admin/`; it
 2. In Vercel project settings, add these **Environment Variables** for Production:
    - `GITHUB_CLIENT_ID`: GitHub OAuth App client ID.
    - `GITHUB_CLIENT_SECRET`: OAuth App client secret.
-   - `GITHUB_CALLBACK_URL`: exact URL `https://YOUR-VERCEL-DOMAIN/api/auth/callback`.
+   - `GITHUB_CALLBACK_URL`: exact URL `https://admin-api.olsterstudios.site/api/auth/callback`.
    - `ADMIN_GITHUB_USERNAME`: the one GitHub username allowed to administer this site.
    - `SESSION_SECRET`: a long random secret (at least 32 random bytes).
    - `GH_REPO_TOKEN`: fine-grained GitHub token restricted to `lmslickolster/lmslickolster.github.io`, with **Contents: Read and write** only.
    - `SITE_URL`: `https://olsterstudios.site`.
-3. Redeploy after setting environment variables.
+3. In Vercel project settings → Domains, add `admin-api.olsterstudios.site` and follow Vercel's DNS instructions. This keeps the admin API on the same site family as the website, which helps browser cookie compatibility.\n4. Redeploy after setting environment variables.
 
 ## 2. Configure GitHub OAuth
 Create a GitHub OAuth App in GitHub Settings → Developer settings → OAuth Apps.
@@ -21,7 +21,7 @@ Create a GitHub OAuth App in GitHub Settings → Developer settings → OAuth Ap
 - The OAuth app is used to verify the administrator's GitHub identity. The separate fine-grained token is what writes website commits; it is stored only as a Vercel server environment variable.
 
 ## 3. Connect the public admin page to the API
-Edit `admin/config.js` and set `apiBase` to your deployed Vercel URL plus `/api`, for example `https://YOUR-VERCEL-DOMAIN/api`. This URL is public, but it contains no secret. Commit that change to `main`. Wait for GitHub Pages to publish, then visit `https://olsterstudios.site/admin/`.
+Edit `admin/config.js` and set `apiBase` to your deployed Vercel URL plus `/api`, for example `https://admin-api.olsterstudios.site/api`. This URL is public, but it contains no secret. Commit that change to `main`. Wait for GitHub Pages to publish, then visit `https://olsterstudios.site/admin/`.
 
 ## 4. Use it
 - Sign in with the GitHub username configured in `ADMIN_GITHUB_USERNAME`.
