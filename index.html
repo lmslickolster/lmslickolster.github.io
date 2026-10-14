@@ -399,21 +399,26 @@
     /* ==================== SCROLL REVEAL ANIMATIONS ==================== */
     .scroll-reveal {
       opacity: 0;
-      transform: translateY(34px);
-      transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      transform: translate3d(0, 64px, 0);
+      transition: opacity 850ms ease, transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
+    .scroll-reveal.reveal-from-left { transform: translate3d(-64px, 18px, 0); }
+    .scroll-reveal.reveal-from-right { transform: translate3d(64px, 18px, 0); }
+
     .scroll-reveal.is-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
 
-    .projects-grid .project-card:nth-child(2) { transition-delay: 100ms; }
-    .projects-grid .project-card:nth-child(3) { transition-delay: 200ms; }
+    .projects-grid .project-card:nth-child(2) { transition-delay: 140ms; }
+    .projects-grid .project-card:nth-child(3) { transition-delay: 280ms; }
 
     @media (prefers-reduced-motion: reduce) {
       .scroll-reveal,
+      .scroll-reveal.reveal-from-left,
+      .scroll-reveal.reveal-from-right,
       .projects-grid .project-card:nth-child(2),
       .projects-grid .project-card:nth-child(3) {
         opacity: 1;
@@ -624,12 +629,19 @@
       if (event.key === 'Escape') closeSocialModal();
     });
 
-    // Reveal content smoothly as it enters the viewport while scrolling.
+    // Reveal major page elements with obvious slide-in animations while scrolling.
     const revealTargets = document.querySelectorAll(
-      '.social-container, .content-container .section, .project-card'
+      '.logo, header h1, header .subtitle, .social-container, .content-container .section-title, .about-box, .project-card'
     );
 
-    revealTargets.forEach(element => element.classList.add('scroll-reveal'));
+    revealTargets.forEach((element, index) => {
+      element.classList.add('scroll-reveal');
+      if (element.matches('.section-title, .about-box') && index % 2 === 0) {
+        element.classList.add('reveal-from-left');
+      } else if (element.matches('.project-card') && index % 2 === 1) {
+        element.classList.add('reveal-from-right');
+      }
+    });
 
     if ('IntersectionObserver' in window) {
       const revealObserver = new IntersectionObserver((entries, observer) => {
